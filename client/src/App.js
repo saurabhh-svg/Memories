@@ -1,19 +1,22 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { Container, AppBar, Typography, Grow, Grid } from "@mui/material";
 
+import Posts from "./components/Posts/Posts";
+import Form from "./components/Form/Form";
+
+import useStyles from "./styles";
 import memories from "./images/memories.jpeg";
 
-import Posts from "./components/Posts/Posts.js";
-import Form from "./components/Form/Form.js";
-
 const App = () => {
+  const classes = useStyles();
+
   return (
-    <Container maxwidth="lg">
-      <AppBar position="static" color="inherit">
-        <Typography variant="h2" align="center">
+    <Container maxWidth="lg">
+      <AppBar className={classes.appBar} position="static" color="inherit">
+        <Typography className={classes.heading} variant="h2" align="center">
           Memories
         </Typography>
-        <img src={memories} alt="memories" height="60" />
+        <img className={classes.image} src={memories} alt="icon" height="60" />
       </AppBar>
       <Grow in>
         <Container>
